@@ -9,7 +9,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      body: ListView.builder(
+        itemCount: pokemons.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(pokemons[index].name),
+          );
+        })
     );
   }
 }
