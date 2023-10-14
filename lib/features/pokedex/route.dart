@@ -17,6 +17,7 @@ class PokedexRoute extends StatelessWidget {
             // TODO - replace this container with details page
             return Container();
           }
+          return Container();
         });
       },
     );
