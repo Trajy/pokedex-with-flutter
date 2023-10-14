@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_with_flutter/common/repository/pokemon_repository_impl.dart';
 import 'package:pokedex_with_flutter/features/pokedex/home/container/home_container.dart';
-import 'package:pokedex_with_flutter/features/pokedex/home/pages/home_loading.dart';
+import 'package:pokedex_with_flutter/common/widgets/common_loading.dart';
 import 'package:pokedex_with_flutter/features/pokedex/home/pages/home_page.dart';
 import 'package:pokedex_with_flutter/features/pokedex/route.dart';
 
