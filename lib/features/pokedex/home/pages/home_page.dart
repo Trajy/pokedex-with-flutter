@@ -21,6 +21,15 @@ class HomePage extends StatelessWidget {
         centerTitle: false,
         elevation: 0,
         backgroundColor: Colors.redAccent,
+        actions: [
+          IconButton(
+            onPressed: () {}, 
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.white,
+            )
+          )
+        ],
       ),
       body: GridView.count(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
