@@ -18,8 +18,8 @@ class PokemonReposotoryImpl implements PokemonRepository {
     return dio.get(ApiEnum.POKEMON_API.url)
         .then((response) {
            final json = jsonDecode(response.data) as Map<String, dynamic>;
-           final list = json['pokemon'] as List<Map<String, dynamic>>;
-           return list.map((value) => Pokemon.fromMap(value)) as List<Pokemon>;
+           final list = List.of(json['pokemon']);
+           return list.map((value) => Pokemon.fromMap(value)).toList();
         });
   }
 

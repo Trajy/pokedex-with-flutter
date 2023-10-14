@@ -5,7 +5,7 @@ class Pokemon {
   final String image;
 
   factory Pokemon.fromMap(Map<String, dynamic> map) {
-    return Pokemon(name: map['name'], image: map['image']);
+    return Pokemon(name: map['name'], image: map['img']);
   }
 
   Pokemon({required this.name, required this.image});
