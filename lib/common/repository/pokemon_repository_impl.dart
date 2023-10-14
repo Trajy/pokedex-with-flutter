@@ -7,11 +7,11 @@ import 'package:pokedex_with_flutter/common/repository/pokemon_repository.dart';
 
 class PokemonReposotoryImpl implements PokemonRepository {
 
-  PokemonReposotoryImpl._privateConstructor();
-
   static final PokemonReposotoryImpl instance = PokemonReposotoryImpl._privateConstructor();
 
   static final Dio dio = Dio();
+
+  PokemonReposotoryImpl._privateConstructor();
 
   @override
   Future<List<Pokemon>> getAllPokemons() {
