@@ -10,36 +10,39 @@ class PokemonItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: model.baseColor!.withOpacity(0.6),
-        borderRadius: BorderRadius.circular(30)
-      ),
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            model.name,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: model.types.map((e) => PokemonTypeWidget(type: e)).toList(),
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pushNamed('/details', arguments: model), 
+      child: Container(
+        decoration: BoxDecoration(
+          color: model.baseColor!.withOpacity(0.6),
+          borderRadius: BorderRadius.circular(30)
+        ),
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              model.name,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold
               ),
-              Flexible(
-                child: Image.network(model.image)
-              )
-            ]
-          )
-        ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: model.types.map((e) => PokemonTypeWidget(type: e)).toList(),
+                ),
+                Flexible(
+                  child: Image.network(model.image)
+                )
+              ]
+            )
+          ],
+        )
       )
     );
   }
