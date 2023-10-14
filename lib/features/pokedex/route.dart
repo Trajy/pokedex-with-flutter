@@ -10,7 +10,13 @@ class PokedexRoute extends StatelessWidget {
       initialRoute: '/',
       onGenerateRoute: (settings) {
         return MaterialPageRoute(builder: (context) {
-          return const HomeContainer();
+          if(settings.name == '/') {
+            return const HomeContainer();
+          }
+          if(settings.name == '/details') {
+            // TODO - replace this container with details page
+            return Container();
+          }
         });
       },
     );
