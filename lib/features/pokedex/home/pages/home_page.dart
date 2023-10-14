@@ -12,6 +12,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: GridView.count(
         crossAxisCount: 2,
+        crossAxisSpacing: 24,
+        mainAxisSpacing: 24,
         children: pokemons.map((e) => PokemonItemWidget(model: e)).toList(),
       )
     );
