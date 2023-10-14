@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_with_flutter/common/models/pokemon_model.dart';
 import 'package:pokedex_with_flutter/common/repository/pokemon_repository_impl.dart';
-import 'package:pokedex_with_flutter/common/widgets/home_error.dart';
+import 'package:pokedex_with_flutter/common/widgets/common_error.dart';
 import 'package:pokedex_with_flutter/common/widgets/common_loading.dart';
 import 'package:pokedex_with_flutter/features/pokedex/home/pages/home_page.dart';
 
@@ -28,5 +28,5 @@ class HomeContainer extends StatelessWidget {
             return const CommonError(error: "Unknown error");
         }, 
     );
-}
+  }
 }
