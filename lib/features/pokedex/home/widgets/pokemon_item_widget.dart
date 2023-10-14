@@ -11,6 +11,9 @@ class PokemonItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: model.baseColor
+      ),
       child: Column(
         children: [
           Text(model.name),
