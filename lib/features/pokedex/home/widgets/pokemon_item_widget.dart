@@ -12,21 +12,35 @@ class PokemonItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: model.baseColor
+        color: model.baseColor!.withOpacity(0.6),
+        borderRadius: BorderRadius.circular(30)
       ),
+      padding: const EdgeInsets.all(16),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(model.name),
+          Text(
+            model.name,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold
+            ),
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: model.types.map((e) => PokemonTypeWidget(type: e)).toList(),
               ),
-              Image.network(model.image)
+              Flexible(
+                child: Image.network(model.image)
+              )
             ]
           )
         ],
-      ),
+      )
     );
   }
 }

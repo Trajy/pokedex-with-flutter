@@ -11,11 +11,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.count(
-        crossAxisCount: 2,
-        crossAxisSpacing: 24,
-        mainAxisSpacing: 24,
-        children: pokemons.map((e) => PokemonItemWidget(model: e)).toList(),
-      )
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          crossAxisCount: 2,
+          crossAxisSpacing: 24,
+          mainAxisSpacing: 24,
+          children: pokemons.map((e) => PokemonItemWidget(model: e)).toList(),
+        )
     );
   }
 }
