@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HomeLoading extends StatelessWidget {
-  const HomeLoading
+class CommonLoading extends StatelessWidget {
+  const CommonLoading
+
 ({super.key});
 
   @override

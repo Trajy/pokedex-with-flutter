@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_with_flutter/common/models/pokemon_model.dart';
 import 'package:pokedex_with_flutter/common/repository/pokemon_repository_impl.dart';
-import 'package:pokedex_with_flutter/features/pokedex/home/pages/home_error.dart';
-import 'package:pokedex_with_flutter/features/pokedex/home/pages/home_loading.dart';
+import 'package:pokedex_with_flutter/common/widgets/home_error.dart';
+import 'package:pokedex_with_flutter/common/widgets/common_loading.dart';
 import 'package:pokedex_with_flutter/features/pokedex/home/pages/home_page.dart';
 
 class HomeContainer extends StatelessWidget {
@@ -17,15 +17,15 @@ class HomeContainer extends StatelessWidget {
         future: reposotory.getAllPokemons(),
         builder: (context, snapshot) {
             if(snapshot.connectionState == ConnectionState.waiting) {
-            return const HomeLoading();
+            return const CommonLoading();
             }
             if(snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
             return HomePage(pokemons: snapshot.data!);
             }
             if(snapshot.hasError) {
-            return HomeError(error: snapshot.error.toString());
+            return CommonError(error: snapshot.error.toString());
             }
-            return const HomeError(error: "Unknown error");
+            return const CommonError(error: "Unknown error");
         }, 
     );
 }
