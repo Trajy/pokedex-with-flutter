@@ -14,6 +14,9 @@ class HomePage extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             title: Text(pokemons[index].name),
+            onTap: () {
+              Navigator.of(context).pushNamed('/details', arguments: pokemons[index]);
+            },
           );
         })
     );
